@@ -14,6 +14,12 @@ const aiConfig = {
         model: process.env.GOOGLE_MODEL || "gemini-3-flash-preview",
         timeout: process.env.GOOGLE_TIMEOUT || 30000,
         maxRetries: process.env.GOOGLE_MAX_RETRIES || 3
+    },
+    groq: {
+        apiKey: process.env.GROQ_API_KEY,
+        model: process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
+        timeout: process.env.GROQ_TIMEOUT || 30000,
+        maxRetries: process.env.GROQ_MAX_RETRIES || 3
     }
 }
 

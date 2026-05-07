@@ -1,11 +1,12 @@
 import normalizeVendorError from "../utils/errorNormalizer.js";
 import GeminiAdapter from "./adapters/Google.adapter.js";
+import GroqAdapter from "./adapters/Groq.adapter.js";
 import OpenAIAdapter from "./adapters/OpenAI.adapter.js";
 
 
 class AIService {
     constructor(config) {
-        this.provider = config.provider;
+        this.provider = config.provider.toLowerCase();
         this.adapter = this.initializeAdapter(this.provider, config);
         console.log('AIService initialized', {
             provider: this.provider,
@@ -19,6 +20,8 @@ class AIService {
                 return new OpenAIAdapter(config);
             case 'google':
                 return new GeminiAdapter(config);
+            case 'groq':
+                return new GroqAdapter(config);
             default:
                 throw new Error(`Unknow AI provider: ${provider}. Supported openai, gemini`);
         }

@@ -5,19 +5,19 @@ async function basicExamples() {
 
     // Example 1: Using default provider (from .env)
     console.log('1. Using default provider...');
-    const defaultAI = createAIService();
+    const defaultAI = createAIService({ provider: "openai" });
     console.log('Provider : ', defaultAI.getInfo());
 
     const resp1 = await defaultAI.generateText('Hello, how are you?');
     console.log('Response 1 : ', resp1);
 
-    console.log("\n Using Google explicitly... ");
+    console.log("\n Using Groq explicitly... ");
 
-    const googleAI = createAIService({
-        provider: "google"
+    const groqAI = createAIService({
+        provider: "groq"
     });
 
-    const resp2 = await googleAI.generateText('Explain how AI works in a few words');
+    const resp2 = await groqAI.generateText('Explain how AI works in a few words');
     console.log('Response 2 : ', resp2);
 
     console.log("\n Using OpenAI explicitly... ");
@@ -29,6 +29,15 @@ async function basicExamples() {
     const resp3 = await openaiAI.generateText('Tell me some python tricks');
     console.log('Response 3 : ', resp3);
 
+    const openAi2 = createAIService({
+        provider: process.env.AI_PROVIDER
+    });
+
+    const streamResp = await openAi2.generateTextStream("Explain quantum computing in detail", (chunk) => {
+        process.stdout.write(chunk);
+    });
+
+    console.log('Stream response : ', streamResp);
 }
 
 basicExamples().then(() => {

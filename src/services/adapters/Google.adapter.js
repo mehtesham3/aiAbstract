@@ -6,7 +6,7 @@ class GeminiAdapter extends BaseAIAdapter {
         super(config);
         this.validateConfig();
 
-        this.clientSdk = new GoogleGenAI({ api: config.apikey });
+        this.clientSdk = new GoogleGenAI({ apiKey: config.apikey });
         this.defaultModel = config.model || 'gemini-3-flash-preview'
     }
 
@@ -21,7 +21,7 @@ class GeminiAdapter extends BaseAIAdapter {
             contents: [{ role: "user", parts: [{ text: prompt }] }],
             config: {
                 temperature: options.temperature || 0.7,
-                maxOutputTokens: options.maxTokens || 500,
+                // maxOutputTokens: options.maxTokens || 500,
             }
         });
 
