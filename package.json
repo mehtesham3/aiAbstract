@@ -1,0 +1,28 @@
+{
+  "name": "3rdpartyintegration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehtesham3/production.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/mehtesham3/production/issues"
+  },
+  "homepage": "https://github.com/mehtesham3/production#readme",
+  "dependencies": {
+    "@google/genai": "^1.52.0",
+    "axios": "^1.16.0",
+    "dotenv": "^17.4.2",
+    "groq-sdk": "^1.1.2",
+    "openai": "^6.36.0"
+  }
+}
