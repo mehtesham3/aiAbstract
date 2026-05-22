@@ -6,7 +6,7 @@ class baseClient {
     constructor(config = {}) {
         // axios instance create 
         this.client = axios.create({
-            timeout: config.timeout || 10000,
+            timeout: config.timeout || 10000, // 10 sec timeout for external API call 
             headers: config.headers || {},
             baseURL: config.baseURL || ""
         })

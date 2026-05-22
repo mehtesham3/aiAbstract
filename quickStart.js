@@ -6,7 +6,7 @@ import "dotenv/config"
 // console.log(response);
 
 const ai2 = createAIService({ provider: process.env.AI_PROVIDER });
-const streamResp = await ai2.generateTextStream('Tell me the capabilites of yours and also in which ways we can use you to get the best of yours ', (chunk) => {
+const streamResp = await ai2.generateTextStream('Explain me in detail about the working of Groq LLM model , its architecture and best ways to use it for different usecases ', (chunk) => {
     process.stdout.write(chunk);
 });
 console.log('Stream response : ', streamResp);

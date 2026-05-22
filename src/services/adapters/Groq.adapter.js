@@ -62,7 +62,7 @@ class GroqAdapter extends BaseAIAdapter {
                 totalChunks++;
             }
         }
-        console.log('Groq streaming complete ', { totalChunks });
+        console.log('\nGroq streaming complete ', { totalChunks });
     }
     getCapabilities() {
         return {
